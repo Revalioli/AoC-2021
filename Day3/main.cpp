@@ -24,6 +24,7 @@ int main(int argc, char* argv[]) {
 				break;
 			case 2:
 				// Part 2
+				day3_2(input);
 				break;
 			default:
 				cout << "Part number should be 1 or 2" << endl;
@@ -39,6 +40,14 @@ int main(int argc, char* argv[]) {
 		end = std::chrono::steady_clock::now();
 
 		std::chrono::microseconds elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+		cout << "Elapsed time : " << elapsed_time.count() << " mircoseconds" << endl;
+
+		cout << "Part 2" << endl;
+		start = std::chrono::steady_clock::now();
+		day3_2(input);
+		end = std::chrono::steady_clock::now();
+
+		elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 		cout << "Elapsed time : " << elapsed_time.count() << " mircoseconds" << endl;
 	}
 }
