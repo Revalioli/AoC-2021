@@ -1,3 +1,5 @@
 **/cmake-build-debug
 **/cmake-build-release
 **/.idea
+libAoC.a
+AoClib/test_AoClib.cpp
