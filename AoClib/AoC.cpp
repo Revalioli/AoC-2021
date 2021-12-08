@@ -16,4 +16,7 @@ namespace AoC{
 		return result;
 	}
 
+	std::vector<std::string> split(const std::string &&str, char delimiter) {
+		return split(str, delimiter);
+	}
 }
