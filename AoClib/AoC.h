@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <chrono>
 
 namespace AoC{
 
@@ -47,6 +48,23 @@ namespace AoC{
 	 */
 	template<class ReturnType, class InType, class Functor>
 	std::vector<ReturnType> map(std::vector<InType>&& vect, Functor func);
+
+	using func = void(*)(const std::string& input);
+
+	// Benchmark
+
+	/**
+	 * \brief Run a time benchmark on a given AoC day part
+	 * \tparam DurationType	the time of the duration used (derived from std::chrono::duration)
+	 * \param f the function to test, its signature must be void(*)(const std::string& input)
+	 * \param input the const string& input to be used
+	 * \param samples number of samples to perform
+	 * \param unitName the name of the time unit (for text output)
+	 * \return the mean execution time of the function
+	 */
+	template<class DurationType>
+	int timeBenchmark(func f, const std::string& input, int samples, const std::string& unitName);
+
 
 }
 
