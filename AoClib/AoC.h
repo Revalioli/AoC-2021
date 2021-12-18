@@ -24,6 +24,13 @@ namespace AoC{
 	 */
 	std::vector<std::string> split(const std::string&& str, char delimiter);
 
+	/**
+	 * \brief Removes newline characters from the end of a string
+	 * \param str the string to be modified
+	 * \return the string str
+	 */
+	std::string& chomp(std::string& str);
+
 	// Vector operations
 	/**
 	 * \brief Applies a function on all the elements of a vector, and creates a new vector from the results
