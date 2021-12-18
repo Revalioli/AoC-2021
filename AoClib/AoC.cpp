@@ -37,4 +37,13 @@ namespace AoC{
 	std::vector<std::string> split(const std::string &&str, char delimiter) {
 		return split(str, delimiter);
 	}
+
+	std::string& chomp(std::string &str) {
+		if(!str.empty()){
+			while (str.back() == '\n' || str.back() == '\r')
+				str.erase(str.end()-1);
+		}
+
+		return str;
+	}
 }
