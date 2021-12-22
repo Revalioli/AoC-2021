@@ -6,7 +6,7 @@
 
 namespace AoC{
 
-	std::vector<std::string> split(const std::string &str, char delimiter) {
+	std::vector<std::string> split(const std::string &str, char delimiter, bool remove_empty) {
 //		==== Old implementation with istringstream ===
 
 //		std::istringstream iss(str);
@@ -27,14 +27,15 @@ namespace AoC{
 		for(auto pos = str.begin();; pos++){
 			auto start = pos;
 			pos = std::find(pos, stop, delimiter);
-			result.emplace_back(start, pos);
+			if(!remove_empty || start != pos)
+				result.emplace_back(start, pos);
 			if(pos == stop)
 				return result;
 		}
 
 	}
 
-	std::vector<std::string> split(const std::string &&str, char delimiter) {
+	std::vector<std::string> split(const std::string &&str, char delimiter, bool remove_empty) {
 		return split(str, delimiter);
 	}
 

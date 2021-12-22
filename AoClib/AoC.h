@@ -11,18 +11,20 @@ namespace AoC{
 	/**
 	 * \brief Split a string into substring using a specified char delimiter
 	 * \param str the string to be split
-	 * \param delimiter
+	 * \param delimiter the delimiter character
+	 * \param remove_empty true if empty string must not be added
 	 * \return a vector<string> containing all substrings
 	 */
-	std::vector<std::string> split(const std::string& str, char delimiter);
+	std::vector<std::string> split(const std::string& str, char delimiter, bool remove_empty = false);
 
 	/**
 	 * \brief Split a string into substring using a specified char delimiter
 	 * \param str the rvalue string to be split
-	 * \param delimiter
+	 * \param delimiter the delimiter character
+	 * \param remove_empty true if empty string must not be added
 	 * \return a vector<string> containing all substrings
 	 */
-	std::vector<std::string> split(const std::string&& str, char delimiter);
+	std::vector<std::string> split(const std::string&& str, char delimiter, bool remove_empty = false);
 
 	/**
 	 * \brief Removes newline characters from the end of a string
